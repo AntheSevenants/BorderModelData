@@ -55,7 +55,7 @@ density_plot <- ggplot(data.frame(x = c(example_value - 0.20, example_value + 0.
   labs(x="Sound value", y="Probability density")
 
 tikz(file = "diffusion_plot.tex", width=6, height=3, standAlone = TRUE)
-plot_grid(diffusion_plot, density_plot, labels = "AUTO")
+plot_grid(diffusion_plot, density_plot, labels = "AUTO", label_x = 0, label_y = 0, hjust = -0.5, vjust = -0.5)
 endofffile <- dev.off()
 system("lualatex diffusion_plot.tex; rm *.aux; rm *.log")
 
